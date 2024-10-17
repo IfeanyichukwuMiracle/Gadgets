@@ -1,0 +1,146 @@
+header.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  border-bottom: 1.5px solid whitesmoke;
+  z-index: 100;
+}
+header.header .logo {
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+header.header ul.desktop-links {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+header.header ul li a {
+  color: var(--black);
+  font-size: 0.95rem;
+}
+
+/* mobile links */
+header.header ul.mobile-links {
+  display: none;
+}
+
+/* cart-link */
+.cart-link {
+  position: relative;
+}
+.cart-item-number {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  background: var(--black);
+  color: white;
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 0rem 0.3rem 0.1rem;
+  border-radius: 100%;
+}
+
+/* search section */
+section.search {
+  background: rgba(71, 71, 71, 0.089);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  z-index: 101;
+  width: 100%;
+  height: 100%;
+}
+section.search form {
+  background: var(--white);
+  position: relative;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  width: max-content;
+  margin: 4rem auto;
+  display: flex;
+  gap: 0.3rem;
+}
+section.search form input {
+  border: none;
+  background: #f4f4f4;
+  padding: 0.5rem 0.7rem;
+}
+section.search form button {
+  padding: 0.5rem 0.7rem;
+  color: white;
+  border-radius: 0.3rem;
+  border: none;
+  background: var(--black);
+}
+.search-cancel {
+  position: absolute;
+  top: 0rem;
+  right: 0.3rem;
+}
+
+/* proceed modal */
+section.proceed-modal-container {
+  background: rgba(71, 71, 71, 0.089);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  z-index: 101;
+  width: 100%;
+  height: 100%;
+}
+.proceed-modal {
+  background: var(--white);
+  position: relative;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  width: max-content;
+  margin: 4rem auto;
+}
+.proceed-modal .cancel {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.4rem;
+}
+#proceed-text {
+  font-size: 1.08rem;
+}
+
+.search-div {
+  width: 100%;
+}
+
+@media (max-width: 550px) {
+  .proceed-modal {
+    width: 98%;
+  }
+  #proceed-text {
+    font-size: 0.95rem;
+  }
+  section.search form {
+    width: 98%;
+  }
+  section.search form input {
+    width: 100%;
+    border-radius: 0.2rem;
+  }
+}
+
+@media (max-width: 410px) {
+  header.header {
+    padding: 0.7rem 0.6rem;
+  }
+  header.header ul.desktop-links {
+    display: none;
+  }
+  /* mobile links */
+  header.header ul.mobile-links {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,49 @@
+form.login-form {
+  width: max-content;
+  margin: 5rem auto;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.3rem;
+}
+form.login-form input {
+  background: var(--white);
+  border: none;
+  padding: 0.5rem 0.3rem;
+  margin: 0.3rem 0;
+  min-width: 20rem;
+  max-width: 23rem;
+}
+form.login-form button[type="submit"] {
+  min-width: 20rem;
+  max-width: 23rem;
+  border: none;
+  background: var(--black);
+  padding: 0.2rem 0 0.45rem;
+  margin-top: 1.5rem;
+}
+#login-text {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+div.auth-text {
+  margin-top: 0.3rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 410px) {
+  form.login-form {
+    margin: 6rem auto;
+    width: 90%;
+  }
+  form.login-form input {
+    min-width: 100%;
+  }
+  form.login-form button[type="submit"] {
+    min-width: 100%;
+  }
+  div.auth-text {
+    font-size: 0.8rem;
+  }
+}

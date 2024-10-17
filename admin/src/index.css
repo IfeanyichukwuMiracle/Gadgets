@@ -1,0 +1,18 @@
+:root {
+  --border-radius: 0.2rem;
+  --white: rgb(254, 254, 254);
+  --black: rgb(22, 22, 22);
+  --font-family: "Source Sans 3", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background: var(--white);
+}

@@ -1,0 +1,27 @@
+section.hero-section {
+  width: 99.5%;
+  margin: 1.8rem auto;
+}
+.hero-section .product-banner {
+  width: 100%;
+  height: max-content;
+  margin-bottom: 0.5rem;
+}
+.hero-section .banner-btns {
+  display: flex;
+  width: max-content;
+  margin: auto;
+  gap: 0.4rem;
+}
+.hero-section .banner-btns button svg {
+  background: var(--black);
+  color: whitesmoke;
+  border: none;
+  padding: 0.25rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.hero-section .banner-btns button {
+  background: none;
+  border: none;
+}

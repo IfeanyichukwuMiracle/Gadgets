@@ -1,0 +1,31 @@
+:root {
+  --white: rgb(254, 255, 255);
+  --black: rgb(22, 22, 22);
+  --black-hover: rgb(30, 30, 30);
+  --font-family: "Source Sans 3", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--font-family);
+}
+
+body {
+  background: var(--white);
+}
+
+.btn {
+  background: var(--black);
+  color: whitesmoke;
+  font-size: 1.05rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+  background: var(--black-hover);
+}

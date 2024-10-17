@@ -1,0 +1,34 @@
+section.form {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+/* form */
+section.form form {
+  margin: 3.5rem 0;
+}
+section.form form div {
+  /* background: blue; */
+  margin: 1rem 0;
+}
+section.form form input,
+section.form form textarea,
+section.form form select {
+  width: 100%;
+  background: #f4f4f4;
+  border: none;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0.2rem;
+}
+div#submit-btn {
+  margin: 3rem 0;
+}
+button[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  color: whitesmoke;
+  background: var(--black);
+}

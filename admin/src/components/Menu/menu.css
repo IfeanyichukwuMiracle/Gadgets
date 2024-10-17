@@ -1,0 +1,60 @@
+p.menu-icon {
+  position: fixed;
+  right: 0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: none;
+  background: var(--white);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+}
+
+/* menu */
+section.menu {
+  position: fixed;
+  text-align: right;
+  padding: 0.5rem;
+  /* background: yellow; */
+  height: 100%;
+  display: flex;
+  border-left: 0.5px solid #f4f4f4;
+  flex-direction: column;
+  gap: 3rem;
+  background: var(--white);
+  transition: all 0.25s ease-in-out;
+}
+.hide {
+  right: -9rem;
+  top: 3rem;
+}
+.show {
+  right: 0;
+  top: 3rem;
+}
+section.menu ul {
+  margin-top: 3rem;
+  /* background: blue; */
+  list-style: none;
+}
+section.menu ul li {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  /* background: green; */
+}
+p.menu-logout {
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: rgb(247, 36, 36);
+  border-radius: 0.2rem;
+  color: whitesmoke;
+  width: max-content;
+  padding: 0.2rem 0.3rem;
+}
+
+@media (max-width: 700px) {
+  p.menu-icon {
+    display: block;
+  }
+}
