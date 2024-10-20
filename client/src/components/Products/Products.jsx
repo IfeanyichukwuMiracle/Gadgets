@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 const Products = () => {
   const { data: premiumProducts, fetching: premiumFetching } = useFetch(
-    `http://localhost:8080/api/v1/product/premium-products`
+    `https://gadgets-backend.onrender.com/api/v1/product/premium-products`
   );
   const { data: latestProducts, fetching: latestFetching } = useFetch(
-    `http://localhost:8080/api/v1/product/latest-arrivals`
+    `https://gadgets-backend.onrender.com/api/v1/product/latest-arrivals`
   );
 
   return (

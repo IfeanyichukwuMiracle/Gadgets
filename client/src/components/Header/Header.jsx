@@ -16,9 +16,12 @@ const Header = () => {
   // logout
   const logout = async () => {
     try {
-      await axios.get(`http://localhost:8080/api/v1/user/logout`, {
-        withCredentials: true,
-      });
+      await axios.get(
+        `https://gadgets-backend.onrender.com/api/v1/user/logout`,
+        {
+          withCredentials: true,
+        }
+      );
       toast.loading("Logging you out!");
       dispatch({ type: "logout" });
       setTimeout(() => {

@@ -15,15 +15,15 @@ const ProductPage = () => {
   const [review, setReview] = useState({ review: "" });
   const { productId } = useParams();
   const { data: product, fetching: productFetching } = useFetch(
-    `http://localhost:8080/api/v1/product/${productId}`,
+    `https://gadgets-backend.onrender.com/api/v1/product/${productId}`,
     productId
   );
   const { data: reviews, fetching: reviewsFetching } = useFetch(
-    `http://localhost:8080/api/v1/review/${productId}`,
+    `https://gadgets-backend.onrender.com/api/v1/review/${productId}`,
     productId
   );
   const { data: products, fetching: productsFetching } = useFetch(
-    `http://localhost:8080/api/v1/product?category=${
+    `https://gadgets-backend.onrender.com/api/v1/product?category=${
       product.category || `phone`
     }&limit=3`,
     productId
@@ -60,7 +60,7 @@ const ProductPage = () => {
   async function sendReview() {
     try {
       await axios.post(
-        `http://localhost:8080/api/v1/review/${productId}`,
+        `https://gadgets-backend.onrender.com/api/v1/review/${productId}`,
         review,
         {
           withCredentials: true,

@@ -32,10 +32,14 @@ const Form = ({ formType }) => {
     // add products
     if (formType === "add") {
       try {
-        await axios.post(`http://localhost:8080/api/v1/product/create`, data, {
-          withCredentials: true,
-          headers: { "Content-Type": `multipart/form-data` },
-        });
+        await axios.post(
+          `https://gadgets-backend.onrender.com/api/v1/product/create`,
+          data,
+          {
+            withCredentials: true,
+            headers: { "Content-Type": `multipart/form-data` },
+          }
+        );
         toast.success(`Product added!`);
         setProduct({
           name: "",
@@ -63,7 +67,7 @@ const Form = ({ formType }) => {
     if (formType === "edit") {
       try {
         const res = await axios.patch(
-          `http://localhost:8080/api/v1/product/${productId}`,
+          `https://gadgets-backend.onrender.com/api/v1/product/${productId}`,
           data,
           {
             withCredentials: true,
@@ -99,7 +103,7 @@ const Form = ({ formType }) => {
     async function fetchProduct() {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/v1/product/${productId}`,
+          `https://gadgets-backend.onrender.com/api/v1/product/${productId}`,
           {
             withCredentials: true,
           }

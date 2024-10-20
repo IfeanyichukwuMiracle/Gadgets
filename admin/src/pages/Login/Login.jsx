@@ -25,7 +25,7 @@ const Login = () => {
     async function loginAdmin() {
       try {
         await axios.post(
-          `http://localhost:8080/api/v1/user/login/admin`,
+          `https://gadgets-backend.onrender.com/api/v1/user/login/admin`,
           { ...user },
           { withCredentials: true }
         );

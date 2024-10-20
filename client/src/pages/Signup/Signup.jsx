@@ -12,19 +12,19 @@ const Signup = () => {
     lastname: "",
     email: "",
     password: "",
-    passwordConfirm: ""
+    passwordConfirm: "",
   });
   const navigate = useNavigate();
 
   const { dispatch } = useContext(cartContext);
 
-  const handleOnChange = e => {
-    setUser(prevUser => {
+  const handleOnChange = (e) => {
+    setUser((prevUser) => {
       return { ...prevUser, [e.target.name]: e.target.value };
     });
   };
 
-  const handleOnSubmit = e => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
     // signup user
     auth(user, "signup", setUser, navigate, dispatch);
@@ -36,7 +36,7 @@ const Signup = () => {
         action="#"
         method="post"
         className="signup-form"
-        onSubmit={e => handleOnSubmit(e)}
+        onSubmit={(e) => handleOnSubmit(e)}
       >
         <p id="signup-text">Signup</p>
         <div className="fname-div">
@@ -47,7 +47,7 @@ const Signup = () => {
             placeholder="firstname"
             required
             value={user.firstname}
-            onChange={e => handleOnChange(e)}
+            onChange={(e) => handleOnChange(e)}
           />
         </div>
         <div className="lname-div">
@@ -57,7 +57,7 @@ const Signup = () => {
             id="lastname"
             placeholder="lastname"
             value={user.lastname}
-            onChange={e => handleOnChange(e)}
+            onChange={(e) => handleOnChange(e)}
           />
         </div>
         <div className="email-div">
@@ -67,7 +67,7 @@ const Signup = () => {
             id="email"
             placeholder="Email"
             value={user.email}
-            onChange={e => handleOnChange(e)}
+            onChange={(e) => handleOnChange(e)}
             required
           />
         </div>
@@ -78,7 +78,7 @@ const Signup = () => {
             id="password"
             placeholder="Password"
             value={user.password}
-            onChange={e => handleOnChange(e)}
+            onChange={(e) => handleOnChange(e)}
             required
           />
         </div>
@@ -89,7 +89,7 @@ const Signup = () => {
             id="password-confirm"
             placeholder="Confirm Password"
             value={user.passwordConfirm}
-            onChange={e => handleOnChange(e)}
+            onChange={(e) => handleOnChange(e)}
             required
           />
         </div>

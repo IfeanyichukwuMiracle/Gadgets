@@ -19,12 +19,12 @@ const orderRoute = require("./routes/orderRoute");
 const port = process.env.PORT || 8080;
 
 // start server
-startServer(process.env.MONGO_URI);
+startServer(process.env.MONGO_URI_2);
 
 // cors
 app.use(
   cors({
-    origin: [`http://localhost:5173`, `http://localhost:5174`],
+    origin: [`http://localhost:5173`, `https://gadgets-backend.onrender.com`],
     credentials: true,
     methods: [`GET`, `POST`, `PATCH`, `DELETE`, `PUT`],
   })

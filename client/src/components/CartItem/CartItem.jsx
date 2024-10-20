@@ -6,7 +6,9 @@ import useFetch from "../../useFetch";
 import toast, { Toaster } from "react-hot-toast";
 
 const CartItem = ({ name, image, quantity, price, id }) => {
-  const { data } = useFetch(`http://localhost:8080/api/v1/product/${id}`);
+  const { data } = useFetch(
+    `https://gadgets-backend.onrender.com/api/v1/product/${id}`
+  );
   const { state, dispatch } = useContext(cartContext);
   const [amount, setAmount] = useState(quantity);
 

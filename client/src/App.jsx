@@ -16,7 +16,7 @@ const getLoginState = JSON.parse(localStorage.getItem("loggedIn") || false);
 // default state
 const initialState = {
   appCart: getLocalStorageData,
-  loggedIn: getLoginState
+  loggedIn: getLoginState,
 };
 
 function App() {

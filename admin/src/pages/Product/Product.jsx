@@ -16,9 +16,12 @@ const Product = () => {
   // delete product
   async function deleteProduct() {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/product/${productId}`, {
-        withCredentials: true,
-      });
+      await axios.delete(
+        `https://gadgets-backend.onrender.com/api/v1/product/${productId}`,
+        {
+          withCredentials: true,
+        }
+      );
       toast.success(`Deletion successful!`);
       setTimeout(() => navigate(`/inventory`), 800);
     } catch (err) {
@@ -32,7 +35,7 @@ const Product = () => {
     async function getProduct() {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/v1/product/${productId}`,
+          `https://gadgets-backend.onrender.com/api/v1/product/${productId}`,
           { withCredentials: true }
         );
 

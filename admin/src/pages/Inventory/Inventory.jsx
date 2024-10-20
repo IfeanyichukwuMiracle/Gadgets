@@ -15,7 +15,7 @@ const Inventory = () => {
   async function getProducts(currentPage) {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/product?page=${currentPage}&limit=${10}`,
+        `https://gadgets-backend.onrender.com/api/v1/product?page=${currentPage}&limit=${10}`,
         {
           withCredentials: true,
         }
@@ -28,9 +28,12 @@ const Inventory = () => {
   }
   async function getAllProducts() {
     try {
-      const response = await axios.get(`http://localhost:8080/api/v1/product`, {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `https://gadgets-backend.onrender.com/api/v1/product`,
+        {
+          withCredentials: true,
+        }
+      );
       setAllProducts(response.data.data);
     } catch (err) {
       console.log(err);
@@ -53,9 +56,12 @@ const Inventory = () => {
   // delete product
   async function deleteProduct(id) {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/product/${id}`, {
-        withCredentials: true,
-      });
+      await axios.delete(
+        `https://gadgets-backend.onrender.com/api/v1/product/${id}`,
+        {
+          withCredentials: true,
+        }
+      );
       toast.success(`Product Deleted!`);
 
       window.location.reload();

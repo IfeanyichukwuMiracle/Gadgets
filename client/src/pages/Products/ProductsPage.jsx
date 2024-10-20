@@ -35,7 +35,9 @@ const ProductsPage = () => {
   async function fetchProduct(filterBy) {
     setFetching(true);
     try {
-      const response = await axios.get(`http://localhost:8080/api/v1/product`);
+      const response = await axios.get(
+        `https://gadgets-backend.onrender.com/api/v1/product`
+      );
       let productList = response.data.data.filter((el) => {
         if (
           el.name.toLowerCase().includes(filterBy.toLowerCase()) ||

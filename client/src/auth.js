@@ -5,10 +5,10 @@ async function auth(data, type, setUser, navigate, dispatch) {
   // send user details
   try {
     const response = await axios.post(
-      `http://localhost:8080/api/v1/user/${type}`,
+      `https://gadgets-backend.onrender.com/api/v1/user/${type}`,
       { ...data },
       {
-        withCredentials: true
+        withCredentials: true,
       }
     );
     console.log(response.data);
@@ -25,7 +25,7 @@ async function auth(data, type, setUser, navigate, dispatch) {
       lastname: "",
       email: "",
       password: "",
-      passwordConfirm: ""
+      passwordConfirm: "",
     });
     setTimeout(() => navigate("/"), 1000);
   } catch (error) {
@@ -38,7 +38,7 @@ async function auth(data, type, setUser, navigate, dispatch) {
           lastname: "",
           email: "",
           password: "",
-          passwordConfirm: ""
+          passwordConfirm: "",
         });
         return;
       }

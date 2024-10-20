@@ -48,7 +48,7 @@ const Cart = () => {
     if (obj?.reference) {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/v1/payment/verify/${obj?.reference}`,
+          `https://gadgets-backend.onrender.com/api/v1/payment/verify/${obj?.reference}`,
           { withCredentials: true }
         );
         console.log(response.data);
@@ -58,7 +58,7 @@ const Cart = () => {
           // create order --------------
           try {
             const response = await axios.post(
-              `http://localhost:8080/api/v1/order`,
+              `https://gadgets-backend.onrender.com/api/v1/order`,
               { order: state.appCart },
               { withCredentials: true }
             );
@@ -96,7 +96,7 @@ const Cart = () => {
     // console.log(data, "Hello");
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/v1/payment/initialize`,
+        `https://gadgets-backend.onrender.com/api/v1/payment/initialize`,
         data,
         {
           withCredentials: true,

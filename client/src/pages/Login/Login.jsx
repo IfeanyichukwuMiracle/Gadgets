@@ -9,19 +9,19 @@ import { cartContext } from "../../App";
 const Login = () => {
   const [user, setUser] = useState({
     email: "",
-    password: ""
+    password: "",
   });
   const navigate = useNavigate();
 
   const { dispatch } = useContext(cartContext);
 
-  const handleOnChange = e => {
-    setUser(prevUser => {
+  const handleOnChange = (e) => {
+    setUser((prevUser) => {
       return { ...prevUser, [e.target.name]: e.target.value };
     });
   };
 
-  const handleOnSubmit = e => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
     // login user
     auth(user, "login", setUser, navigate, dispatch);
@@ -33,7 +33,7 @@ const Login = () => {
         action="#"
         method="post"
         className="login-form"
-        onSubmit={e => handleOnSubmit(e)}
+        onSubmit={(e) => handleOnSubmit(e)}
       >
         <p id="login-text">Login</p>
         <div className="email-div">
@@ -43,7 +43,7 @@ const Login = () => {
             id="email"
             placeholder="Email"
             value={user.email}
-            onChange={e => handleOnChange(e)}
+            onChange={(e) => handleOnChange(e)}
             required
           />
         </div>
@@ -54,7 +54,7 @@ const Login = () => {
             id="password"
             placeholder="Password"
             value={user.password}
-            onChange={e => handleOnChange(e)}
+            onChange={(e) => handleOnChange(e)}
             required
           />
         </div>

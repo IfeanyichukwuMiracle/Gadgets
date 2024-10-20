@@ -13,7 +13,7 @@ const Banner = () => {
   async function logout() {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/user/logout`,
+        `https://gadgets-backend.onrender.com/api/v1/user/logout`,
         { withCredentials: true }
       );
       console.log(response.data);

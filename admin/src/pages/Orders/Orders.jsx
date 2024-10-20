@@ -14,7 +14,7 @@ const Orders = () => {
   async function getOrders(currentPage) {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/order?page=${currentPage}&limit=${10}`,
+        `https://gadgets-backend.onrender.com/api/v1/order?page=${currentPage}&limit=${10}`,
         {
           withCredentials: true,
         }
@@ -27,9 +27,12 @@ const Orders = () => {
   }
   async function getAllOrders() {
     try {
-      const response = await axios.get(`http://localhost:8080/api/v1/order`, {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `https://gadgets-backend.onrender.com/api/v1/order`,
+        {
+          withCredentials: true,
+        }
+      );
       // console.log(response.data.data);
       setAllOrders(response.data.data);
     } catch (err) {
@@ -53,9 +56,12 @@ const Orders = () => {
   // delete product
   async function deleteOrder(id) {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/order/${id}`, {
-        withCredentials: true,
-      });
+      await axios.delete(
+        `https://gadgets-backend.onrender.com/api/v1/order/${id}`,
+        {
+          withCredentials: true,
+        }
+      );
       toast.success(`Order fulfilled!`);
       window.location.reload();
     } catch (err) {
