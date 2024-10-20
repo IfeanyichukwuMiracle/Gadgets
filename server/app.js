@@ -24,7 +24,10 @@ startServer(process.env.MONGO_URI_2);
 // cors
 app.use(
   cors({
-    origin: [`http://localhost:5173`, `https://gadgets-backend.onrender.com`],
+    origin: [
+      `http://igadgets-admin.netlify.app`,
+      `https://igadgets.netlify.app`,
+    ],
     credentials: true,
     methods: [`GET`, `POST`, `PATCH`, `DELETE`, `PUT`],
   })
