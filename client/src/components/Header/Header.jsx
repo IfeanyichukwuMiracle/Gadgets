@@ -273,34 +273,28 @@ const Header = () => {
       {/* menu */}
       <section className={`menu ${show ? `show` : `hide`}`}>
         <ul>
-          <li>
-            <Link
-              to={`/inventory`}
-              style={{
-                color: "var(--black)",
-                display: "flex",
-                alignItems: "center",
-                gap: ".3rem",
-                fontWeight: "500",
-              }}
+          <li
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              setModal(true);
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.6}
+              stroke="currentColor"
+              className="size-6"
+              style={{ width: "1.5rem" }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.9}
-                stroke="currentColor"
-                className="size-6"
-                style={{ width: "1.3rem" }}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                />
-              </svg>
-              Search
-            </Link>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+            Search
           </li>
         </ul>
         <p

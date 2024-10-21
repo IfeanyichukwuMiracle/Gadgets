@@ -42,6 +42,7 @@ section.menu {
   gap: 3rem;
   background: var(--white);
   transition: all 0.25s ease-in-out;
+  z-index: 100;
 }
 .hide {
   right: -9rem;
