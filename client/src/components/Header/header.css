@@ -71,6 +71,15 @@ p.menu-logout {
   width: max-content;
   padding: 0.2rem 0.3rem;
 }
+p.menu-login {
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: var(--black);
+  border-radius: 0.2rem;
+  color: whitesmoke;
+  width: max-content;
+  padding: 0.2rem 0.3rem;
+}
 
 /* cart-link */
 .cart-link {
