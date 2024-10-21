@@ -13,10 +13,16 @@ async function auth(data, type, setUser, navigate, dispatch) {
     );
     console.log(response.data);
     if (type === "signup") {
+      //
+      localStorage.setItem("token", response.data.token);
+      //
       toast.success("Signup successful!");
       dispatch({ type: "change_loggedin_state" });
     }
     if (type === "login") {
+      //
+      localStorage.setItem("token", response.data.token);
+      //
       toast.success("Login successful!");
       dispatch({ type: "change_loggedin_state" });
     }

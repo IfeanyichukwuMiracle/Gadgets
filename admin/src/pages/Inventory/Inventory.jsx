@@ -60,6 +60,7 @@ const Inventory = () => {
         `https://gadgets-backend.onrender.com/api/v1/product/${id}`,
         {
           withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
       toast.success(`Product Deleted!`);

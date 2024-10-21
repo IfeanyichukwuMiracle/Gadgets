@@ -37,7 +37,10 @@ const Form = ({ formType }) => {
           data,
           {
             withCredentials: true,
-            headers: { "Content-Type": `multipart/form-data` },
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              "Content-Type": `multipart/form-data`,
+            },
           }
         );
         toast.success(`Product added!`);
@@ -71,7 +74,10 @@ const Form = ({ formType }) => {
           data,
           {
             withCredentials: true,
-            headers: { "Content-Type": `multipart/form-data` },
+            headers: {
+              "Content-Type": `multipart/form-data`,
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
           }
         );
         console.log(res.data);

@@ -21,8 +21,10 @@ const Header = () => {
         `https://gadgets-backend.onrender.com/api/v1/user/logout`,
         {
           withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
+      localStorage.removeItem("token");
       toast.loading("Logging you out!");
       dispatch({ type: "logout" });
       setTimeout(() => {
@@ -274,7 +276,12 @@ const Header = () => {
       <section className={`menu ${show ? `show` : `hide`}`}>
         <ul>
           <li
-            style={{ cursor: "pointer" }}
+            style={{
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: ".3rem",
+            }}
             onClick={() => {
               setModal(true);
             }}

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
 import auth from "../../auth";
@@ -73,7 +73,7 @@ const Login = () => {
         </div>
 
         <div className="auth-text">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link
             to={`/signup`}
             style={{ textDecoration: "underline", color: "blue" }}

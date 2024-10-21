@@ -17,6 +17,7 @@ const Orders = () => {
         `https://gadgets-backend.onrender.com/api/v1/order?page=${currentPage}&limit=${10}`,
         {
           withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
       setOrders(response.data.data);
@@ -31,6 +32,7 @@ const Orders = () => {
         `https://gadgets-backend.onrender.com/api/v1/order`,
         {
           withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
       // console.log(response.data.data);
@@ -60,6 +62,7 @@ const Orders = () => {
         `https://gadgets-backend.onrender.com/api/v1/order/${id}`,
         {
           withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
       toast.success(`Order fulfilled!`);

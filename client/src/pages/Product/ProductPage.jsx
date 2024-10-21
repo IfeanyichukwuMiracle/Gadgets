@@ -64,6 +64,7 @@ const ProductPage = () => {
         review,
         {
           withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
       toast.success(`Review sent!`);

@@ -24,12 +24,15 @@ const Login = () => {
     // login admin
     async function loginAdmin() {
       try {
-        await axios.post(
+        const response = await axios.post(
           `https://gadgets-backend.onrender.com/api/v1/user/login/admin`,
           { ...user },
           { withCredentials: true }
         );
         // console.log(response.data);
+        //
+        localStorage.setItem("token", response.data.token);
+        //
         toast.success(`Login successful!`);
         setUser({ email: "", password: "" });
         dispatch({ type: "login_admin" });

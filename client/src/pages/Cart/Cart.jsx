@@ -49,7 +49,12 @@ const Cart = () => {
       try {
         const response = await axios.get(
           `https://gadgets-backend.onrender.com/api/v1/payment/verify/${obj?.reference}`,
-          { withCredentials: true }
+          {
+            withCredentials: true,
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
         );
         console.log(response.data);
 
@@ -100,6 +105,7 @@ const Cart = () => {
         data,
         {
           withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
       // console.log(response.data.data.data);

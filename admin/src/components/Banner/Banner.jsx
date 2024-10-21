@@ -14,9 +14,13 @@ const Banner = () => {
     try {
       const response = await axios.get(
         `https://gadgets-backend.onrender.com/api/v1/user/logout`,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
       console.log(response.data);
+      localStorage.removeItem("token");
       dispatch({ type: "logout_admin" });
       localStorage.removeItem("loggedIn");
 

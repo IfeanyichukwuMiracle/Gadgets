@@ -20,6 +20,7 @@ const Product = () => {
         `https://gadgets-backend.onrender.com/api/v1/product/${productId}`,
         {
           withCredentials: true,
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
       toast.success(`Deletion successful!`);

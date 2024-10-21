@@ -33,7 +33,7 @@ header.header ul.mobile-links {
 section.menu {
   position: fixed;
   text-align: right;
-  padding: 0.5rem;
+  padding: 1rem 1.5rem;
   /* background: yellow; */
   height: 100%;
   display: flex;
