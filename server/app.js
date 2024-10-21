@@ -24,7 +24,7 @@ startServer(process.env.MONGO_URI_2);
 // cors
 app.use(
   cors({
-    origin: `*`,
+    origin: `https://igadgets-admin.netlify.app`,
     credentials: true,
     methods: [`GET`, `POST`, `PATCH`, `DELETE`, `PUT`],
   })
