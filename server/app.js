@@ -27,6 +27,7 @@ app.use(
     origin: [
       `http://igadgets-admin.netlify.app`,
       `https://igadgets.netlify.app`,
+      `*`,
     ],
     credentials: true,
     methods: [`GET`, `POST`, `PATCH`, `DELETE`, `PUT`],
