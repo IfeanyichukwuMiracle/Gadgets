@@ -114,7 +114,7 @@ const loginAdmin = async (req, res, next) => {
 
     // check if user is admin
     if (!user.isAdmin)
-      return next(AppError(`You are not an admin!`, `error`, 400));
+      return next(AppError("Email or password incorrect!", `error`, 400));
 
     // create token
     const token = await jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
