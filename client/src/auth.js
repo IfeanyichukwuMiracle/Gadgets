@@ -52,6 +52,7 @@ async function auth(data, type, setUser, navigate, dispatch) {
       toast.error(error.response?.data?.message);
       return;
     }
+    console.log(error);
     toast.error(
       error.response?.data?.message ||
         "Login failed! Check connection and try again."
