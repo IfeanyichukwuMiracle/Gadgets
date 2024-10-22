@@ -59,6 +59,13 @@ const ProductPage = () => {
   // send review
   async function sendReview() {
     const toastId = toast.loading(`sending review...`);
+
+    if (!localStorage.getItem("token")) {
+      toast.dismiss(toastId);
+      toast.error(`Login to send review!`);
+      return;
+    }
+
     try {
       await axios.post(
         `https://gadgets-backend.onrender.com/api/v1/review/${productId}`,
