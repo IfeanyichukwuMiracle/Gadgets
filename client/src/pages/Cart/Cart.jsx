@@ -46,6 +46,7 @@ const Cart = () => {
 
     // verify transaction ----------------
     if (obj?.reference) {
+      const toastId = toast.loading(`Verifying transaction...`);
       try {
         const response = await axios.get(
           `https://gadgets-backend.onrender.com/api/v1/payment/verify/${obj?.reference}`,
@@ -72,6 +73,7 @@ const Cart = () => {
                 },
               }
             );
+            toast.dismiss(toastId);
             console.log(response.data);
             // once order is placed, clear cart ------------
             dispatch({ type: `order_placed` });
@@ -79,6 +81,7 @@ const Cart = () => {
             toast.success(`Your order has been placed!`);
             return;
           } catch (err) {
+            toast.dismiss(toastId);
             console.log(err);
             // once order is placed, clear cart ------------
             dispatch({ type: `order_placed` });
@@ -101,8 +104,8 @@ const Cart = () => {
   const checkout = async function () {
     const data = { order: state.appCart, amount: amount * 100 };
     // console.log(data, "Hello");
+    const toastId = toast.loading(`processing order...`);
     try {
-      const toastId = toast.loading(`processing order...`);
       const response = await axios.post(
         `https://gadgets-backend.onrender.com/api/v1/payment/initialize`,
         data,
@@ -117,6 +120,7 @@ const Cart = () => {
       toast.loading(`Payment page loading`);
       window.location.href = url;
     } catch (error) {
+      toast.dismiss(toastId);
       console.log(error);
       toast.error(
         error.response?.data?.message || `Login to proceed to checkout page!`

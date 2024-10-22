@@ -23,8 +23,8 @@ const Login = () => {
     e.preventDefault();
     // login admin
     async function loginAdmin() {
+      const toastId = toast.loading(`logging in...`);
       try {
-        const toastId = toast.loading(`logging in...`);
         const response = await axios.post(
           `https://gadgets-backend.onrender.com/api/v1/user/login/admin`,
           // `http://localhost:8080/api/v1/user/login/admin`,
@@ -45,6 +45,7 @@ const Login = () => {
         }, 1000);
         return;
       } catch (error) {
+        toast.dismiss(toastId);
         console.log(error);
         toast.error(error.response.data.message);
       }
