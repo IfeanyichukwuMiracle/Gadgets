@@ -122,10 +122,12 @@ const Cart = () => {
         const url = response.data.data.data.authorization_url;
         toast.loading(`Payment page loading`);
         window.location.href = url;
+        return;
       } catch (error) {
         toast.dismiss(toastId);
         console.log(error);
         toast.error(error.response?.data?.message || `Login to purchase!`);
+        return;
       }
     }
     toast.dismiss(toastId);
