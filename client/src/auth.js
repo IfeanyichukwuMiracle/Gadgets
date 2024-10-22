@@ -4,6 +4,7 @@ import axios from "axios";
 async function auth(data, type, setUser, navigate, dispatch) {
   // send user details
   try {
+    const toastId = toast.loading(`${type} loading...`);
     const response = await axios.post(
       `https://gadgets-backend.onrender.com/api/v1/user/${type}`,
       // `http://localhost:8080/api/v1/user/${type}`,
@@ -12,6 +13,7 @@ async function auth(data, type, setUser, navigate, dispatch) {
         withCredentials: true,
       }
     );
+    toast.dismiss(toastId);
     console.log(response.data);
     if (type === "signup") {
       //
