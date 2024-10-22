@@ -19,6 +19,7 @@ const Header = () => {
     try {
       await axios.get(
         `https://gadgets-backend.onrender.com/api/v1/user/logout`,
+        // `http://localhost:8080/api/v1/user/logout`,
         {
           withCredentials: true,
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

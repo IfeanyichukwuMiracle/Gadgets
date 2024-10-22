@@ -6,6 +6,7 @@ async function auth(data, type, setUser, navigate, dispatch) {
   try {
     const response = await axios.post(
       `https://gadgets-backend.onrender.com/api/v1/user/${type}`,
+      // `http://localhost:8080/api/v1/user/${type}`,
       { ...data },
       {
         withCredentials: true,

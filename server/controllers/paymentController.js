@@ -8,9 +8,13 @@ const initializePayment = async (req, res, next) => {
     const params = JSON.stringify({
       email: req.user.email,
       amount: req.body.amount,
-      callback_url: `http://localhost:5174/cart`,
+      // callback_url: `http://localhost:5174/cart`,
+      callback_url: `https://igadgets.netlify.app/cart`,
+      // metadata: {
+      //   cancel_action: `http://localhost:5174/`,
+      // },
       metadata: {
-        cancel_action: `http://localhost:5174/`,
+        cancel_action: `https://igadgets.netlify.app/`,
       },
     });
 

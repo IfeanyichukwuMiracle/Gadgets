@@ -26,10 +26,11 @@ const Login = () => {
       try {
         const response = await axios.post(
           `https://gadgets-backend.onrender.com/api/v1/user/login/admin`,
+          // `http://localhost:8080/api/v1/user/login/admin`,
           { ...user },
           { withCredentials: true }
         );
-        // console.log(response.data);
+        console.log(response.data);
         //
         localStorage.setItem("token", response.data.token);
         //

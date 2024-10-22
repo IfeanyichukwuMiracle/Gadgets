@@ -19,7 +19,8 @@ const orderRoute = require("./routes/orderRoute");
 const port = process.env.PORT || 8080;
 
 // start server
-startServer(process.env.MONGO_URI_2);
+// startServer(process.env.MONGO_URI_2);
+startServer(process.env.MONGO_URI);
 
 // cors
 app.use(
@@ -28,6 +29,7 @@ app.use(
       `https://igadgets.netlify.app`,
       `https://igadgets-admin.netlify.app`,
     ],
+    // origin: [`http://localhost:5173`, `http://localhost:5174`],
     credentials: true,
     methods: [`GET`, `POST`, `PATCH`, `DELETE`, `PUT`],
   })
