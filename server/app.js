@@ -19,8 +19,8 @@ const orderRoute = require("./routes/orderRoute");
 const port = process.env.PORT || 8080;
 
 // start server
-// startServer(process.env.MONGO_URI_2);
-startServer(process.env.MONGO_URI);
+startServer(process.env.MONGO_URI_2);
+// startServer(process.env.MONGO_URI);
 
 // cors
 app.use(
