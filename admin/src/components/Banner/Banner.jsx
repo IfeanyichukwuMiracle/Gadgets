@@ -11,6 +11,7 @@ const Banner = () => {
 
   // logout function
   async function logout() {
+    const toastId = toast.loading(`logging out...`);
     try {
       const response = await axios.get(
         `https://gadgets-backend.onrender.com/api/v1/user/logout`,
@@ -19,6 +20,7 @@ const Banner = () => {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
+      toast.dismiss(toastId);
       console.log(response.data);
       localStorage.removeItem("token");
       dispatch({ type: "logout_admin" });
@@ -27,6 +29,7 @@ const Banner = () => {
       // change location
       navigate(`/`);
     } catch (error) {
+      toast.dismiss(toastId);
       console.log(error.response.data);
       toast.error(error.response?.data?.message);
       return;
