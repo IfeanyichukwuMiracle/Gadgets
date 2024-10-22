@@ -4,8 +4,9 @@ const User = require("../models/userModel");
 
 const authenticate = async (req, res, next) => {
   // check request headers for jwt
-  const token =
-    req.cookies.token || req?.headers?.authorization?.split(" ")?.[1];
+  // const token =
+  //   req.cookies.token || req?.headers?.authorization?.split(" ")?.[1];
+  const token = req?.headers?.authorization?.split(" ")?.[1];
   if (!token) return next(AppError("You aren't logged in!", "error", 400));
 
   // check if jwt is valid

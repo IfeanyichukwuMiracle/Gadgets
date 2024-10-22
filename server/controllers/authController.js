@@ -36,13 +36,15 @@ const signup = async (req, res, next) => {
     });
 
     // send response and cookie
-    return res
-      .cookie("token", token, {
-        httpOnly: true,
-        expires: new Date(Date.now() + 10 * 60 * 60 * 24 * 1000),
-      })
-      .status(201)
-      .json({ status: "success", token });
+    // return res
+    //   .cookie("token", token, {
+    //     httpOnly: true,
+    //     expires: new Date(Date.now() + 10 * 60 * 60 * 24 * 1000),
+    //   })
+    //   .status(201)
+    //   .json({ status: "success", token });
+
+    return res.status(201).json({ status: "success", token });
   } catch (error) {
     console.log(error);
     return next(error);
@@ -78,13 +80,14 @@ const login = async (req, res, next) => {
     });
 
     // send response and cookie
-    return res
-      .cookie("token", token, {
-        httpOnly: true,
-        expires: new Date(Date.now() + 10 * 60 * 60 * 24 * 1000),
-      })
-      .status(200)
-      .json({ status: "success", token });
+    // return res
+    //   .cookie("token", token, {
+    //     httpOnly: true,
+    //     expires: new Date(Date.now() + 10 * 60 * 60 * 24 * 1000),
+    //   })
+    //   .status(200)
+    //   .json({ status: "success", token });
+    return res.status(200).json({ status: "success", token });
   } catch (error) {
     console.log(error);
     return next(error);
@@ -122,13 +125,14 @@ const loginAdmin = async (req, res, next) => {
     });
 
     // send response and cookie
-    return res
-      .cookie("token", token, {
-        httpOnly: true,
-        expires: new Date(Date.now() + 10 * 60 * 60 * 24 * 1000),
-      })
-      .status(200)
-      .json({ status: "success", token });
+    // return res
+    //   .cookie("token", token, {
+    //     httpOnly: true,
+    //     expires: new Date(Date.now() + 10 * 60 * 60 * 24 * 1000),
+    //   })
+    //   .status(200)
+    //   .json({ status: "success", token });
+    return res.status(200).json({ status: "success", token });
   } catch (error) {
     console.log(error);
     return next(error);
@@ -139,9 +143,10 @@ const loginAdmin = async (req, res, next) => {
 //
 const logout = async (req, res, next) => {
   try {
-    return res
-      .clearCookie("token")
-      .json({ status: "success", message: "logged out" });
+    // return res
+    //   .clearCookie("token")
+    //   .json({ status: "success", message: "logged out" });
+    return res.json({ status: "success", message: "logged out" });
   } catch (error) {
     console.log(error);
     return next(error);
