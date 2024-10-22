@@ -17,6 +17,7 @@ const authenticate = async (req, res, next) => {
     result = data;
   });
 
+  console.log(result);
   // check if user exists
   const user = await User.findById(result.id).select("+isAdmin");
   if (!user) return next(AppError("User doesn't exist!", "error", 404));

@@ -17,7 +17,7 @@ const Cart = () => {
   const { state, dispatch } = useContext(cartContext);
   const [amount, setAmount] = useState(0);
   const { data: products, fetching: productsFetching } = useFetch(
-    `http://localhost:8080/api/v1/product?limit=3`
+    `https://gadgets-backend.onrender.com/api/v1/product?limit=3`
   );
 
   // check query params and verify transaction
@@ -67,7 +67,9 @@ const Cart = () => {
               { order: state.appCart },
               {
                 withCredentials: true,
-                headers: { Authorization: localStorage.getItem("token") },
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
               }
             );
             console.log(response.data);
