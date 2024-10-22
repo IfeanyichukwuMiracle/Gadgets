@@ -65,19 +65,19 @@ const Cart = () => {
             const response = await axios.post(
               `https://gadgets-backend.onrender.com/api/v1/order`,
               { order: state.appCart },
-              { withCredentials: true }
+              {
+                withCredentials: true,
+                headers: { Authorization: localStorage.getItem("token") },
+              }
             );
             console.log(response.data);
-            // toast.success(`Your order has been placed!`);
-            // // once order is placed, clear cart ------------
-            // dispatch({ type: `order_placed` });
-            // setTimeout(() => {
-            //   // window.location.href = `http://localhost:5174/cart`;
-            //   navigate(`/cart`);
-            // }, 3000);
+            // once order is placed, clear cart ------------
+            dispatch({ type: `order_placed` });
+            navigate(`/cart`);
+            toast.success(`Your order has been placed!`);
             return;
           } catch (err) {
-            // console.log(err);
+            console.log(err);
             // once order is placed, clear cart ------------
             dispatch({ type: `order_placed` });
             navigate(`/cart`);
