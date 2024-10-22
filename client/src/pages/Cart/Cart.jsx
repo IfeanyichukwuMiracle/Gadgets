@@ -105,27 +105,32 @@ const Cart = () => {
     const data = { order: state.appCart, amount: amount * 100 };
     // console.log(data, "Hello");
     const toastId = toast.loading(`processing order...`);
-    try {
-      const response = await axios.post(
-        `https://gadgets-backend.onrender.com/api/v1/payment/initialize`,
-        data,
-        {
-          withCredentials: true,
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      );
-      // console.log(response.data.data.data);
-      toast.dismiss(toastId);
-      const url = response.data.data.data.authorization_url;
-      toast.loading(`Payment page loading`);
-      window.location.href = url;
-    } catch (error) {
-      toast.dismiss(toastId);
-      console.log(error);
-      toast.error(
-        error.response?.data?.message || `Login to proceed to checkout page!`
-      );
+    if (localStorage.getItem("token")) {
+      try {
+        const response = await axios.post(
+          `https://gadgets-backend.onrender.com/api/v1/payment/initialize`,
+          data,
+          {
+            withCredentials: true,
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        // console.log(response.data.data.data);
+        toast.dismiss(toastId);
+        const url = response.data.data.data.authorization_url;
+        toast.loading(`Payment page loading`);
+        window.location.href = url;
+      } catch (error) {
+        toast.dismiss(toastId);
+        console.log(error);
+        toast.error(error.response?.data?.message || `Login to purchase!`);
+      }
     }
+    toast.dismiss(toastId);
+    toast.error(`Login to purchase.`);
+    return;
   };
 
   useEffect(() => {
