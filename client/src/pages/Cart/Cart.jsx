@@ -102,6 +102,7 @@ const Cart = () => {
     const data = { order: state.appCart, amount: amount * 100 };
     // console.log(data, "Hello");
     try {
+      const toastId = toast.loading(`processing order...`);
       const response = await axios.post(
         `https://gadgets-backend.onrender.com/api/v1/payment/initialize`,
         data,
@@ -111,6 +112,7 @@ const Cart = () => {
         }
       );
       // console.log(response.data.data.data);
+      toast.dismiss(toastId);
       const url = response.data.data.data.authorization_url;
       toast.loading(`Payment page loading`);
       window.location.href = url;
