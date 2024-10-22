@@ -32,7 +32,7 @@ const Login = () => {
           { withCredentials: true }
         );
         toast.dismiss(toastId);
-        console.log(response.data);
+        // console.log(response.data);
         //
         localStorage.setItem("token", response.data.token);
         //

@@ -14,7 +14,7 @@ async function auth(data, type, setUser, navigate, dispatch) {
       }
     );
     toast.dismiss(toastId);
-    console.log(response.data);
+    // console.log(response.data);
     if (type === "signup") {
       //
       localStorage.setItem("token", response.data.token);
