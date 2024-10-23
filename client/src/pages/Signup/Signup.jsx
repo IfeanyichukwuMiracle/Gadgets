@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -29,6 +29,10 @@ const Signup = () => {
     // signup user
     auth(user, "signup", setUser, navigate, dispatch);
   };
+
+  useEffect(() => {
+    document.title = `igadgets - Signup`;
+  }, []);
   return (
     <>
       <Toaster />

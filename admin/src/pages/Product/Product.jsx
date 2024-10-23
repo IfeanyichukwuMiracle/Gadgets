@@ -48,6 +48,7 @@ const Product = () => {
     }
 
     getProduct();
+    document.title = `igadgets - ${product.name}`;
   }, [productId]);
   return (
     <>

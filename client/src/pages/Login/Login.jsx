@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
 import auth from "../../auth";
@@ -26,6 +26,9 @@ const Login = () => {
     // login user
     auth(user, "login", setUser, navigate, dispatch);
   };
+  useEffect(() => {
+    document.title = `igadgets - Login`;
+  }, []);
   return (
     <>
       <Toaster />

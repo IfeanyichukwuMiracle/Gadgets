@@ -127,7 +127,7 @@ const Form = ({ formType }) => {
     <>
       <Toaster />
       <section className="form">
-        <p className="form-title">Form Type</p>
+        <p className="form-title">{formType}</p>
 
         {/* form */}
         <form
@@ -216,7 +216,9 @@ const Form = ({ formType }) => {
             />
           </div>
           <div id="submit-btn">
-            <button type="submit">Add Product</button>
+            <button type="submit">
+              {formType === "edit" ? `Edit` : `Add`}Product
+            </button>
           </div>
         </form>
       </section>

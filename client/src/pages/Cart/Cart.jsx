@@ -136,6 +136,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    document.title = `igadgets - ${state.appCart.length} items in cart`;
     localStorage.setItem("cart", JSON.stringify(state.appCart));
     const getTotalAmount = () => {
       let count = 0;

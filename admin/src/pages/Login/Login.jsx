@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -52,6 +52,10 @@ const Login = () => {
     }
     loginAdmin();
   };
+
+  useEffect(() => {
+    document.title = `igadgets - Login`;
+  }, []);
   return (
     <>
       <Toaster />

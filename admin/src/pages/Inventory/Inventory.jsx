@@ -76,6 +76,7 @@ const Inventory = () => {
   useEffect(() => {
     getProducts(page);
     getAllProducts();
+    document.title = `igadgets - ${allProducts.length} in Inventory`;
   }, [page]);
   return (
     <>

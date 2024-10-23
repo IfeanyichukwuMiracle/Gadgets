@@ -1,9 +1,13 @@
 import { Banner } from "../../components/Banner";
+import { useEffect } from "react";
 import { Form } from "../../components/Form";
 import { Menu } from "../../components/Menu";
 import "./edit.css";
 
 const Edit = () => {
+  useEffect(() => {
+    document.title = `igadgets - Edit Product`;
+  }, []);
   return (
     <>
       {/* Menu icon */}

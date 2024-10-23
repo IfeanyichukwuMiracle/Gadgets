@@ -57,6 +57,7 @@ const ProductsPage = () => {
   useEffect(() => {
     checkQuery();
     fetchProduct(obj.search);
+    document.title = `igadgets - Search: ${obj.search}`;
   }, [window.location.href]);
 
   return (

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./product.css";
 import { Header } from "../../components/Header";
 import { Product } from "../../components/Product";
@@ -88,6 +88,9 @@ const ProductPage = () => {
     }
   }
 
+  useEffect(() => {
+    document.title = `igadgets - ${product.name}`;
+  }, []);
   return (
     <>
       <Toaster />
