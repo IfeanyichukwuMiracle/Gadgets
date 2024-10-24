@@ -77,7 +77,7 @@ const Orders = () => {
   useEffect(() => {
     getOrders(page);
     getAllOrders();
-    document.title = `igadgets - ${allOrders.length}`;
+    document.title = `igadgets - ${allOrders.length} orders`;
   }, [page]);
 
   return (

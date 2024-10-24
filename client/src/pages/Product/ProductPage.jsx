@@ -90,7 +90,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     document.title = `igadgets - ${product.name}`;
-  }, []);
+  }, [productId]);
   return (
     <>
       <Toaster />
