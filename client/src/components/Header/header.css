@@ -87,10 +87,12 @@ p.menu-login {
 }
 .cart-item-number {
   position: absolute;
-  top: -0.4rem;
-  right: -0.4rem;
-  background: var(--black);
-  color: white;
+  top: -0.6rem;
+  right: -0.5rem;
+  /* background: var(--black); */
+
+  /* color: white; */
+  color: var(--black);
   font-weight: 500;
   font-size: 0.8rem;
   padding: 0rem 0.3rem 0.1rem;
